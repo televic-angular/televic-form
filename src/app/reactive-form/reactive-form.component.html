@@ -1,0 +1,26 @@
+<p>
+  reactive-form works!
+</p>
+<form [formGroup]="myForm" 
+      (ngSubmit)="onSubmit(myForm.value)">
+
+  <div>
+    <label for="nameId">Name</label>
+    <input type="text" 
+           id="nameId" 
+           placeholder="type the name"
+           [formControl]="myForm.controls['name']" 
+           [(ngModel)]="name.value" />
+  </div>
+
+  <div>
+    <label for="ageId">Age</label>
+    <input type="text" 
+           id="ageId" 
+           placeholder="type the age"
+           [formControl]="myForm.controls['age']"
+           [(ngModel)]="age.value" />
+  </div>
+
+  <button type="submit" class="ui button">Submit</button>
+</form>

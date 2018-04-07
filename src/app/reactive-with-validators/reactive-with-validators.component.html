@@ -1,0 +1,43 @@
+<p>
+  reactive-with-validators works!
+</p>
+<form [formGroup]="myForm" 
+      (ngSubmit)="onSubmit(myForm.value)">
+
+  	<div [class.error]="!name.valid && name.touched">
+	    <label for="nameId">Name</label>
+	    <input type="text" 
+	           id="nameId" 
+	           placeholder="type the name"
+	           [formControl]="myForm.controls['name']"
+	           [(ngModel)]="name.value" />
+		<div *ngIf="!name.valid && name.touched"
+		class="ui error message">name is invalid</div>
+
+		<div *ngIf="name.hasError('required') && name.touched"
+		class="ui error message">name is required</div>
+
+		<div *ngIf="name.hasError('invalidName') && name.touched"
+		class="ui error message">name must in Chinese</div>
+  	</div>
+
+  	<div [class.error]="!name.valid && name.touched">
+	    <label for="ageId">Age</label>
+	    <input type="text" 
+	           id="ageId" 
+	           placeholder="type the age"
+	           [formControl]="myForm.controls['age']"
+	           [(ngModel)]="age.value" />
+		<div *ngIf="!age.valid && age.touched"
+		class="ui error message">age is invalid</div>
+
+		<div *ngIf="age.hasError('required') && age.touched"
+		class="ui error message">age is required</div>
+
+		<div *ngIf="age.hasError('invalidAge') && age.touched"
+		class="ui error message">age must from 1 to 99</div>
+  	</div>
+
+	<!-- <div *ngIf="!myForm.valid" class="error">Form is invalid</div> -->
+  	<button type="submit" class="ui button">Submit</button>
+</form>

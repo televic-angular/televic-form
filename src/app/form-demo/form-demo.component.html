@@ -1,0 +1,22 @@
+<p>
+  form-demo works!
+</p>
+
+<form #f="ngForm"
+  (ngSubmit)="onSubmit(f.value)">
+
+	<div class="field">
+		<label for="morningInput">morning</label>
+		<input type="text"
+		       id="morningInput"
+		       placeholder="please type morning things"
+		       name="morning" ngModel />
+		<label for="anotherOne">afternoon</label>
+		<input type="text"
+		       id="anotherOne"
+		       placeholder="please type afternoon things"
+		       name="afternoon" ngModel />
+	</div>
+
+	<button type="submit" >Submit</button>
+</form>
