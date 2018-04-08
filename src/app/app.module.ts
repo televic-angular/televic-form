@@ -1,19 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import { FormDemoModule } from './form-demo/form-demo.module';
 import { ReactiveFormModule } from './reactive-form/reactive-form.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveWithValidatorsModule } from './reactive-with-validators/reactive-with-validators.module';
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ComposeMessageComponent,
   ],
   imports: [
     BrowserModule,
-    FormDemoModule,
+    BrowserAnimationsModule,
     ReactiveFormModule,
     ReactiveWithValidatorsModule,
     AppRoutingModule

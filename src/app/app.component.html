@@ -6,7 +6,9 @@
 </div>
 <nav>
 	<a [routerLink]="['/form-demo']">normal-form</a>
+	<a [routerLink]="[{ outlets: { popup: ['compose'] } }]">compose</a>
 	<a [routerLink]="['/reactive-form']">reactive-form</a>
 	<a [routerLink]="['/reactive-with-validators']">reactive-with-validators</a>
 </nav>
 <router-outlet></router-outlet>
+<router-outlet name="popup"></router-outlet>

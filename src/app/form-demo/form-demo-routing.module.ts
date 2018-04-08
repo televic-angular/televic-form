@@ -6,7 +6,7 @@ import { FormDemoComponent } from './form-demo.component';
 
 const formDemoRoutes: Routes = [
 	{
-		path: 'form-demo',
+		path: '',
 		component: FormDemoComponent
 	}
 ];
